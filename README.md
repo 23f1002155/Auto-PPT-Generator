@@ -20,7 +20,7 @@ A web application that automatically generates a PowerPoint presentation from bu
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/auto-ppt-generator.git](https://github.com/your-username/auto-ppt-generator.git)
+    git clone [https://github.com/your-username/auto-ppt-generator.git](https://github.com/23f1002155/auto-ppt-generator.git)
     cd auto-ppt-generator
     ```
 
@@ -47,5 +47,6 @@ This application transforms raw text into a styled PowerPoint presentation by or
 The core of the content generation lies in a carefully crafted prompt sent to an LLM. When a user submits their text and optional guidance, the application constructs a detailed prompt instructing the model to act as a presentation expert. It asks the LLM to analyze the text, determine a logical number of slides, and structure the information into a clear hierarchy. The output is strictly formatted as a JSON object containing a list of slides, where each slide has a title and an array of content points. This structured data is then easily parsed by the Python backend.
 
 ### Template Style Application
+
 
 To match the user's desired aesthetic, the app uses the `python-pptx` library to analyze the uploaded `.pptx` or `.potx` template. It doesn't just copy the file; it inspects the template's slide masters to identify available layouts (e.g., 'Title and Content'). When generating the new presentation, each new slide is created directly from one of these master layouts. This ensures that all generated slides automatically inherit the template's predefined fonts, color schemes, and placeholder positioning. This method ensures the final output feels consistent with the user's brand identity without requiring complex style-inference logic.
